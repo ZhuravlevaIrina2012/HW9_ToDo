@@ -23,40 +23,25 @@ const buttonText = document.createTextNode('Add new item');
 button.append(buttonText);
 button.classList.add('margin');
 
-root.append(h1, fieldName, input, button);
+//Tasks
+const ol = document.createElement('ol');
+
+root.append(h1, fieldName, input, button, ol);
 button.addEventListener('click', handleButtonClick);
 
 function handleButtonClick(event) {
     const text = input.value;
-    const p = document.createElement('p');
-    const content = document.createTextNode(text);
-    p.append(content);
-    createNewItem(event.target.parentElement, p);
-}
-
-function handleRemoveClick(event) {
-    let rem = event.target.parentElement;
-    console.log(rem);
-    const children = root.children;
-    console.log(children.length);
-    let index=-1;
-    for (let i = children.length - count; i < children.length; i++){
-        if (children[i] === rem) {
-            index = i;
-            break;
-        }
-    }
-    root.removeChild(children[index]);
-}
-
-function createNewItem(parentElement, p) {
-    const itemBlock = document.createElement('container');
+    const li = document.createElement('li');
     const remove = document.createElement('button');
     remove.append(document.createTextNode('X'));
     remove.classList.add('margin');
     remove.addEventListener('click', handleRemoveClick);
-    itemBlock.append(`${count++}. `, p, remove);
-    itemBlock.classList.add('container');
-    let elem = parentElement.append(itemBlock);
+    li.append(text, remove);
+    ol.append(li);
+    event.target.parentElement.append(ol);
     input.value = '';
+}
+
+function handleRemoveClick(event) {
+    ol.removeChild(event.target.parentElement);
 }
