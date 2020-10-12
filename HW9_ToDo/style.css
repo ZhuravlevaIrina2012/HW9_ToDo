@@ -1,0 +1,21 @@
+.text{
+    color: darkblue;
+    text-align: center;
+}
+
+.p{
+    display: inline;
+    margin: 0;
+}
+
+.container{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.margin{
+    margin: 20px;
+}
