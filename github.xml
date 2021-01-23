@@ -3,6 +3,9 @@
     <account id="76457a85-8858-443e-ae60-3844e54185bb" name="ZhuravlevaIrina2012">
       <server host="github.com" />
     </account>
+    <account id="61276b78-7d1c-4748-955f-204fce3e5792" name="WorkZhuravleva">
+      <server host="github.com" />
+    </account>
   </component>
   <component name="GithubSettings">
     <option name="PRIVATE_GIST" value="false" />
